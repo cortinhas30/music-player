@@ -6,7 +6,7 @@ const Discover = () => {
   const { data, isFetching, error } = useGetTop20Query();
   const genreTitle = "Pop";
 
-  //console.log(data);
+  console.log(data);
 
   if(isFetching) return <Loader title="Loading songs..." />;
 
@@ -33,7 +33,7 @@ const Discover = () => {
       <div className="flex flex-wrap sm:justify-start justify-center gap-8">
         {data?.map((song, i) => (
           <SongCard
-            key={song.key}
+            key={Math.floor(Math.random() * 1000000)}
             song={song}
             i={i}
             />
